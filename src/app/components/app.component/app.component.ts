@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router }  from '@angular/router'; 
 
-import { IProduct } from '../../../app/common-interfaces/products';
-import { ProductService } from '../../../app/services/products.service';
+import { IProduct } from '../../../app/common-interfaces/product/products';
+import { ProductService } from '../../../app/services/product/products.service';
 
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';

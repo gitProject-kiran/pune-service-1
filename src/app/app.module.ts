@@ -2,7 +2,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router'; 
+import { RouterModule, Routes } from '@angular/router';
+import { MultiperPipe } from './filteres/multiplier/multiplier';
 import { AppComponent }  from './components/app.component/app.component';
 import { AppProduct } from './components/product.component/product.component';
 import { AppInventory } from './components/inventory.component/inventory.component';
@@ -16,7 +17,7 @@ const appRoutes : Routes = [
 
 @NgModule({
   imports:      [ NgbModule.forRoot(), BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)],
-  declarations: [ AppComponent, AppProduct, AppInventory, PageNotFoundComponent],
+  declarations: [ AppComponent, AppProduct, AppInventory, PageNotFoundComponent, MultiperPipe],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

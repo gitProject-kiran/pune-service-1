@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>product component {{value}}</h1> <button class="btn btn-sm btn-primary" (click)="clicked()">Button</button>
+    
+    <input [value]="name" (input)="name = $event.target.value"/>{{name}}
+    
+    <p> multipler : {{name | Multiplier: 10}}</p>
+    
+    <demo-app></demo-app>
+
+    <ul>
+        <li *ngFor="let list of appList">
+            <h3>{{list.ID}}</h3>
+            <h4>{{list.Name | uppercase}}</h4>
+            <img [src]='list.url'/>
+        </li>
+    </ul>
+</div>
