@@ -10,19 +10,7 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'my-app',
-  template: `<div class="container">
-  <div class="jumbotron">
-    <h1>Angular 4 </h1> 
-    <p>Angular is the most popular HTML, CSS, and JS framework for developing dynamic application.</p> 
-  </div>
-  <p>This is some text.</p> 
-  <p>This is another text.</p> 
-</div><a class="button" (click)="onBack()">back to product</a>
-            <ul>
-                <li><a [routerLink] = "['/Product']">Product</a></li>
-                <li><a [routerLink] = "['/Inventory']">Inventory</a></li>
-            </ul>
-            <router-outlet></router-outlet><h3>Best Luck</h3>`,
+  templateUrl: `../../../components/app.component/app.component.html`,
   providers : [ProductService]    
 })
 
