@@ -6,20 +6,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MultiperPipe } from './filteres/multiplier/multiplier';
 import { AppComponent }  from './components/app.component/app.component';
-import { AppProduct } from './components/product.component/product.component';
-import { AppInventory } from './components/inventory.component/inventory.component';
+import { contactComponent } from './components/contact.component/contact.component';
+import { aboutComponent } from './components/about.component/about.component';
 import { PageNotFoundComponent } from './components/pageNotFound.component/pageNotFound.component';
 import { headerComponent } from './components/header.component/header.component';
+import { footerComponent } from './components/footer.component/footer.component';
+import { cardComponent } from './components/card.component/card.component';
+import { carouselComponent } from './components/carousel.component/carousel.component';
+import { homePageComponent  } from './components/home-page.component/home-page.component';
 
 const appRoutes : Routes = [
-    {path: 'Product', component: AppProduct},
-    {path: 'Inventory', component: AppInventory },
-    {path: '**', component: AppProduct }
+    {path: 'home', component: homePageComponent},
+    {path: 'About', component: aboutComponent},
+    {path: 'Contact', component: contactComponent },
+    {path: '**', component: homePageComponent }
 ];
 
 @NgModule({
   imports:      [ NgbModule.forRoot(), BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)],
-  declarations: [ AppComponent, AppProduct, AppInventory, PageNotFoundComponent, MultiperPipe, headerComponent],
+  declarations: [ AppComponent, aboutComponent, contactComponent, PageNotFoundComponent, MultiperPipe, headerComponent, footerComponent, homePageComponent, cardComponent, carouselComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
