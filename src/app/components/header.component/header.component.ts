@@ -7,14 +7,14 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 
 export class headerComponent {
-    @ViewChild('navbarToggler') navbarToggler: ElementRef;
-    navBarTogglerIsVisible() {
-        console.log("==>", this.navbarToggler.nativeElement);
-        return this.navbarToggler.nativeElement.offsetParent !== null;
+    @ViewChild('toggleButton') toggleButton: ElementRef;
+    toggleButtonIsVisible() {
+        console.log("==>", this.toggleButton.nativeElement);
+        return this.toggleButton.nativeElement.offsetParent !== null;
     }
     collapseNav() {
-        if (this.navBarTogglerIsVisible()) {
-            this.navbarToggler.nativeElement.click();
+        if (this.toggleButtonIsVisible()) {
+            this.toggleButton.nativeElement.click();
         }
     }
 }
