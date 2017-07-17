@@ -1,10 +1,11 @@
 nav{
         background-image: url(http://www.tawagphilippines.net/_include/images/slide-9-background.jpg);
 }
-navbar{
-        border-bottom: 0 !important; 
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0;
 }
- 
+
 .navbar-default .navbar-nav>li>a, .navbar-brand{
     color:white !important;
 }

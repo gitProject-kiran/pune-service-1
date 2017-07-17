@@ -17,4 +17,5 @@ export class headerComponent {
             this.toggleButton.nativeElement.click();
         }
     }
+
 }
