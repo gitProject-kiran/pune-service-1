@@ -1,24 +1,133 @@
-<div [style.marginTop.px]="50" [style.marginBottom.px]="30">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="well well-sm">
-                    <div class="card col-md-4 col-sm-6 red-title" [style.padding-top.px]="15">
-                        <img class="img-responsive center-block" src="../../../app/images/products/1.jpg" alt="Card image cap" width="318"
-                            height="180">
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary" [style.marginTop.px]="50" [style.marginBottom.px]="30">
+            <div class="panel-heading  text-center">Item Review</div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h2 class="text-center">AC</h2>
+                        <img class="img-responsive center-block" src="../../../app/images/products/{{_productSelected}}.jpg" alt="Card image cap"
+                            width="318" height="180">
                         <div class="card-block">
-                            <h4 class="card-title">Washing Machine</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="card-text">Charges : 150.</p>
+                            <h4 class="card-title text-center">* Terms and Conditions</h4>
+                            <p class="card-text text-center">Visting Charges : 150Rs</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div *ngIf="pinCodeSelected" class="col-md-6">
+                    <div class="well">
+                        <h4>We provide service to following pin codes.</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="sel1">Select the Pin Code :</label>
+                                <select class="form-control" [(ngModel)]="selectedValue">
+                                    <option [disabled]="true" [value]="0">-- Choose One --</option>
+                                    <option *ngFor="let c of countries" [ngValue]="c">{{c}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h6>Click <a [routerLink]="['/Contact']">here</a> to avail our services in your area.</h6>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="address"></label>
+                                <div class="button-group">
+                                    <button type="button" class="btn btn-primary" (click)="pinCodeSelected = false;" [disabled]="selectedValue == 0">Next</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div *ngIf="!pinCodeSelected" class="col-md-6">
+                    <form class="well form-horizontal">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="firstName">First Name *</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" placeholder="first Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName">Last Name *</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="mobileNumber">Mobile Number *</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
+                                    <input class="form-control" placeholder="Mobile Number" maxlength="3" name="phone" required="required" size="3" title=""
+                                        type="tel" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="pinCode">Pin Code</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-pinterest-p" aria-hidden="true"></i></span>
+                                    <input class="form-control" type="number" value="{{selectedValue}}" pattern="[0-9]{4}" maxlength="4" disabled="disabled">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pinCode" [style.marginBottom.px]="18"></label>
+                                <div class="button-group">
+                                    <button type="button" class="btn btn-primary" (click)="pinCodeSelected = true;">Change pin</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="sel1">Subject :</label>
+                                <select class="form-control" id="sel1">
+                                        <option>Repair</option>
+                                        <option>Replace</option>
+                                        <option>Enquire</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="address">Address *</label>
+                                <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="address"></label>
+                                <div class="button-group">
+                                    <button type="button" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
             </div>
-            <div class="col-md-6">
-                <form>
-                    
-                </form>
-            </div>
+            <div class="panel-footer">Panel Footer</div>
         </div>
     </div>
 </div>
