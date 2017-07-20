@@ -1,0 +1,25 @@
+.top-bottom-margin-0{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title-color{
+    color: hotpink;
+}
+.order-content{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        color: darkcyan;;
+}
+hr{
+    -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+.error-color{
+    color: red;
+}
