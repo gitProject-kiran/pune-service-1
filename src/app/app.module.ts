@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'Contact', component: contactComponent },
   { path: 'itemReview/:productId', component: itemReviewComponent },
   { path: 'home', loadChildren: '../app/modules/home-page.module/home-page.module#homePageModule' },
-  { path: '',   redirectTo: '/Contact', pathMatch: 'full' },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
   
 ];
